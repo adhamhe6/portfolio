@@ -26,4 +26,4 @@ To run the website locally, follow these steps:
    ```bash
    git clone https://github.com/adhamhe6/portfolio-website.git
 
-2.Open the index.html file in your web browser.
+2. Open the index.html file in your web browser.
