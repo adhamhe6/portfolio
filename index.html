@@ -147,14 +147,28 @@
         <div class="portrait">
           <img src="assets/img/adham.jpg" alt="Portrait of Adham Hewala" width="500" height="500" fetchpriority="high">
         </div>
-        <div class="code-card" aria-hidden="true">
-          <div class="code-card-bar"><span></span><span></span><span></span><em>api/inventory.py</em></div>
-<pre><code><span class="tk-dec">@router.get</span>(<span class="tk-str">"/stock/{site_id}"</span>)
-<span class="tk-kw">async def</span> <span class="tk-fn">live_stock</span>(site_id: <span class="tk-ty">int</span>):
-    <span class="tk-kw">return await</span> cache.get_or_set(
-        <span class="tk-str">f"stock:{site_id}"</span>,
-        <span class="tk-kw">lambda</span>: repo.snapshot(site_id),
-    )  <span class="tk-cm"># 2.8s → 650ms</span></code></pre>
+        <div class="stat-card" aria-hidden="true">
+          <div class="stat-head">
+            <span class="pulse"></span>
+            <span class="stat-title">shipping</span>
+            <span class="stat-range">2024 → now</span>
+          </div>
+          <div class="stat-row">
+            <div class="stat-line"><span>RFID events / day</span><strong>200k+</strong></div>
+            <svg class="spark" viewBox="0 0 240 44" preserveAspectRatio="none">
+              <path class="spark-area" d="M0 38 L20 34 L40 36 L60 28 L80 30 L100 22 L120 25 L140 17 L160 19 L180 11 L200 14 L220 7 L240 4 L240 44 L0 44 Z"/>
+              <path class="spark-line" pathLength="1" d="M0 38 L20 34 L40 36 L60 28 L80 30 L100 22 L120 25 L140 17 L160 19 L180 11 L200 14 L220 7 L240 4"/>
+              <circle class="spark-dot" cx="240" cy="4" r="3"/>
+            </svg>
+          </div>
+          <div class="stat-row">
+            <div class="stat-line"><span>Report latency</span><strong>2.8s → 650ms</strong></div>
+            <div class="bar"><span style="--to: 23%"></span></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-line"><span>Release time</span><strong>30 → &lt;10 min</strong></div>
+            <div class="bar"><span style="--to: 33%"></span></div>
+          </div>
         </div>
       </div>
     </section>
