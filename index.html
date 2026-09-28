@@ -1,87 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href='static/images/icon.png'>
-    <link href='static/css/main.css' rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adham Hewala · Backend &amp; AI Engineer</title>
+  <meta name="description" content="Adham Hewala is a backend engineer in Cairo who builds Python and FastAPI services, REST APIs and data pipelines for manufacturing and retail platforms, plus AI features on top of them.">
+  <meta name="author" content="Adham Hewala">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1215" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://adhamhe6.github.io/portfolio/">
+
+  <!-- Open Graph / social previews -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Adham Hewala · Backend & AI Engineer">
+  <meta property="og:description" content="Backend engineer building Python/FastAPI services, REST APIs and AI features for manufacturing and retail platforms.">
+  <meta property="og:url" content="https://adhamhe6.github.io/portfolio/">
+  <meta property="og:image" content="https://adhamhe6.github.io/portfolio/assets/img/adham.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/adham.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adham Hewala",
+    "jobTitle": "Backend & AI Engineer",
+    "url": "https://adhamhe6.github.io/portfolio/",
+    "image": "https://adhamhe6.github.io/portfolio/assets/img/adham.jpg",
+    "email": "mailto:adhamdev9@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Mansoura University" },
+    "knowsAbout": ["Python", "FastAPI", "Django", "PostgreSQL", "REST APIs", "System design", "LLM integration", "RAG", "AWS", "Docker"],
+    "sameAs": ["https://github.com/adhamhe6", "https://www.linkedin.com/in/adhamhe6/"]
+  }
+  </script>
 </head>
-<body id="body">
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card card-body h-100 border-info" id="profile-wrapper">
-                    <img id="profile-pic" class="img-fluid rounded-circle mx-auto d-block" src='static/images/me.jpg' alt="">
-                    <h4>Hi I'm Adham!</h4>
-                    <p>I love coding, chess and playing football</p>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="card card-body h-100 border-info">
-                    <h4>My First Job as a Developer</h4>
-                    <hr>
-                    <p>Having gained a solid understanding of programming fundamentals and object-oriented programming, I embarked on my programming journey during my college years. Within a year and a half, I pursued numerous courses and began honing my development skills.</p>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-                    <p>In 2022,  I started freelancing on mostaql, devoting my free time to various projects for clients. During this period, I gained valuable practical experience and expanded my expertise further.</p>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm-1 1 9 7 9-7"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Zm0-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8 4h8v5a4 4 0 0 1-8 0V4Zm0 2H5v1a3 3 0 0 0 3 3m8-4h3v1a3 3 0 0 1-3 3m-4 3v4m-3 3h6m-5-3h4"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3Zm-3.5 9 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m2 9 10-5 10 5-10 5L2 9Zm4 2.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.8M22 9v5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></g></symbol>
+  </svg>
 
-                    <p>In August of that year, I had an internship in (Back-end python & Django development), further augmenting my skill set and deepening my knowledge in this domain.
-                    </p>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Adham Hewala, back to top">
+        <span class="brand-mark" aria-hidden="true">AH</span>
+        <span class="brand-name">Adham Hewala</span>
+      </a>
 
-                    <ul id="ul" class="social-links">
-                        <li><a href="https://www.facebook.com/profile.php?id=100094240131747" target="_blank"><img class="social" src="static/images/facebook.png" alt=""></a></li>
-                        <li><a href="https://www.linkedin.com/in/adhamhe6/" target="_blank"><img class="social" src="static/images/linkedin.png" alt=""></a></li>
-                        <li><a href="https://twitter.com/adhamhe6" target="_blank"><img class="social" src="static/images/twitter.png" alt=""></a></li>
-                        <li><a href="https://github.com/adhamhe6" target="_blank"><img class="social" src="static/images/github.png" alt=""></a></li>
-                    </ul>
-                </div>
-            </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#recognition">Recognition</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          Open to remote roles &amp; relocation (GCC)
+        </p>
+        <h1 id="hero-title">Adham Hewala</h1>
+        <p class="hero-role">Backend &amp; AI Engineer</p>
+        <p class="hero-lede">
+          I build the APIs, data pipelines and services behind business-critical platforms,
+          and the AI features on top of them. Right now I work on real-time inventory and
+          production systems for manufacturers, mostly in Python, FastAPI and PostgreSQL.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">
+            Get in touch
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="assets/docs/Adham_Hewala_CV.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            Download CV
+          </a>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card card-body h-100">
-                    <h5>My Experience as a Developer</h5>
-                    <hr>
-                    <p>In my role as a full stack developer.</p>
-                    <p>I have been involved in the design, development, testing, and management of various web applications. One of my preferred stacks is the Django stack, which I find to be highly effective and reliable.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card card-body h-100">
-                    <h5>What I Know</h5>
-                    <hr>
-                    <p>Python, Django, HTML/CSS, JavaScript, React, Postgres and APIs such as google maps,
-                    Git and a hole punch more I can't possibly mention in one sentence! ;)</p>
-                    <p>PS: Working on Node Js, Mango DB and Machine Learning.</p>
-                </div>
-            </div>
+        <ul class="hero-meta">
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+            Cairo, Egypt
+          </li>
+          <li>
+            <a href="https://github.com/adhamhe6" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              github.com/adhamhe6
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/adhamhe6/" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+              in/adhamhe6
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="portrait">
+          <img src="assets/img/adham.jpg" alt="Portrait of Adham Hewala" width="500" height="500" fetchpriority="high">
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card card-body h-100">
-                    <h5>How I Learn</h5>
-                    <hr>
-                    <p>Reverse Engineering, Build Ugly Prototypes First & AI.</p>
-                    <p>I can learn just about anything by having a final product to tear apart piece by piece. I break the
-                    code where I need to figure out why things work the way they do.  Additionally, with the assistance of AI technologies, such as chat-based GPT models, I am able to expedite the learning process. Documentation is just a reference.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card card-body h-100">
-                    <h5>My Short Term Goals</h5>
-                    <hr>
-                    <p>After almost two years of developing projects and acquiring valuable experience in this field, I'm ready to learn something new. I'll
-                    collaborating and sharing my experience with others on my <a href="https://dev.to/adhamhe6" target="_blank">blog</a>.</p>
-                    <p>In addition to my proficiency in building small-scale projects, I am driven to secure a position within a larger team, where I can contribute & learn from individuals who possess more extensive expertise than my own.</p>
-                </div>
-            </div>
+        <div class="code-card" aria-hidden="true">
+          <div class="code-card-bar"><span></span><span></span><span></span><em>api/inventory.py</em></div>
+<pre><code><span class="tk-dec">@router.get</span>(<span class="tk-str">"/stock/{site_id}"</span>)
+<span class="tk-kw">async def</span> <span class="tk-fn">live_stock</span>(site_id: <span class="tk-ty">int</span>):
+    <span class="tk-kw">return await</span> cache.get_or_set(
+        <span class="tk-str">f"stock:{site_id}"</span>,
+        <span class="tk-kw">lambda</span>: repo.snapshot(site_id),
+    )  <span class="tk-cm"># 2.8s → 650ms</span></code></pre>
         </div>
-        <br>
+      </div>
+    </section>
+
+    <!-- ============ IMPACT ============ -->
+    <section class="impact" aria-label="Results at a glance">
+      <div class="container">
+        <ul class="impact-grid">
+          <li class="impact-item reveal">
+            <span class="impact-value">200k+</span>
+            <span class="impact-label">RFID events ingested per day</span>
+          </li>
+          <li class="impact-item reveal">
+            <span class="impact-value">4&times; faster</span>
+            <span class="impact-label">Inventory reports, 2.8s down to 650ms</span>
+          </li>
+          <li class="impact-item reveal">
+            <span class="impact-value">65+</span>
+            <span class="impact-label">Business clients on platforms I've built for</span>
+          </li>
+          <li class="impact-item reveal">
+            <span class="impact-value">1st place</span>
+            <span class="impact-label">Cairo AI Hackathon 2025</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <p class="section-kicker">01 · About</p>
+        <h2 id="about-title">Services that hold up in production</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            I'm a backend engineer with a Computer Science degree from Mansoura University
+            and about three years of professional experience. Most of that time has gone into
+            services that businesses rely on every day: inventory, purchasing, order
+            management, point of sale and tax compliance.
+          </p>
+          <p>
+            I care about the less visible parts of the job: clean API contracts, sensible data
+            models, fast queries and releases that are easy to roll back. I like working close
+            to the people who use what I build, whether that's a warehouse team or a store
+            manager, and turning their day-to-day problems into product decisions.
+          </p>
+          <p>
+            I also build AI features: LLM integrations, retrieval-augmented generation,
+            semantic matching and forecasting. My team's AI data-analysis platform, Lotus,
+            won the Cairo AI Hackathon 2025.
+          </p>
+        </div>
+        <aside class="about-facts reveal" aria-label="Quick facts">
+          <dl>
+            <div><dt>Focus</dt><dd>Backend services, APIs, data &amp; applied AI</dd></div>
+            <div><dt>Core stack</dt><dd>Python · FastAPI · Django · PostgreSQL · Redis · Docker</dd></div>
+            <div><dt>Cloud</dt><dd>AWS Certified Cloud &amp; AI Practitioner</dd></div>
+            <div><dt>Languages</dt><dd>Arabic (native) · English (C1) · German (B1)</dd></div>
+            <div><dt>Availability</dt><dd>Remote, or relocation to the GCC</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section-alt" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">02 · Experience</p>
+          <h2 id="experience-title">Where I've worked</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <div class="tl-when">
+              <time datetime="2026-01">Jan 2026</time> – Present
+              <span class="tl-where">Cairo · On-site</span>
+            </div>
+            <article class="tl-card">
+              <header>
+                <h3>Software Engineer <span class="at">@ Kulsys Technologies</span></h3>
+                <p class="tl-context">Backend engineer on <a href="https://scalicx.com" target="_blank" rel="noopener">Scalicx</a>, an RFID-based ERP platform for garment and textile manufacturers.</p>
+              </header>
+              <ul>
+                <li>Design and ship the REST APIs for inventory, purchasing, production tracking and order management, used by <strong>15+ manufacturers across 30+ production sites</strong>.</li>
+                <li>Built the RFID ingestion pipeline, which turns <strong>200k+ tag reads a day</strong> into live stock and work-in-progress data on the factory floor.</li>
+                <li>Brought inventory reporting latency down from <strong>2.8s to 650ms</strong> through query optimisation, indexing and caching.</li>
+                <li>Moved releases to containerised deployments, cutting release time from <strong>30 to under 10 minutes</strong> and making rollbacks routine.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>RFID</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-when">
+              <time datetime="2024-10">Oct 2024</time> – <time datetime="2025-12">Dec 2025</time>
+              <span class="tl-where">Cairo · Hybrid</span>
+            </div>
+            <article class="tl-card">
+              <header>
+                <h3>Software Engineer <span class="at">@ myGINNE</span></h3>
+                <p class="tl-context">Retail management platform covering sales, inventory and point of sale for 50+ retailers.</p>
+              </header>
+              <ul>
+                <li>Led the <strong>Egyptian Tax Authority (eTax) integration</strong>, which automated tax compliance and e-receipts for every transaction and <strong>removed manual receipt processing for 50+ retailers</strong>.</li>
+                <li>Designed admin dashboards and role-based access control used by <strong>100+ users</strong>.</li>
+                <li>Designed and optimised the REST APIs for the core sales and inventory modules.</li>
+                <li>Integrated third-party platforms such as Zoho to simplify onboarding, subscriptions and sales operations.</li>
+                <li>Helped move point-of-sale web services into a React Native mobile app.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>FastAPI</li><li>REST</li><li>RBAC</li><li>Odoo</li><li>Zoho</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-when">
+              <time datetime="2024-01">Jan 2024</time> – <time datetime="2025-04">Apr 2025</time>
+              <span class="tl-where">Dubai, UAE · Remote · Part-time</span>
+            </div>
+            <article class="tl-card">
+              <header>
+                <h3>Odoo Developer <span class="at">@ Forge Solutions</span></h3>
+              </header>
+              <ul>
+                <li>Built and customised business modules (CRM, inventory, sales) for <strong>10+ client projects</strong>.</li>
+                <li>Migrated data from legacy systems and checked the results against the source records.</li>
+                <li>Integrated third-party services and automated client business processes.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>PostgreSQL</li><li>Data migration</li><li>Integrations</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-when">
+              <time datetime="2024-11">Nov 2024</time> – <time datetime="2025-03">Mar 2025</time>
+              <span class="tl-where">Cairo · Hybrid</span>
+            </div>
+            <article class="tl-card">
+              <header>
+                <h3>Data Science &amp; AI Trainee <span class="at">@ Digital Egypt Pioneers Initiative (MCIT)</span></h3>
+                <p class="tl-context">National programme, completed part-time alongside full-time work.</p>
+              </header>
+              <ul>
+                <li>Built and evaluated machine learning models on real datasets with Pandas, NumPy and scikit-learn.</li>
+                <li>Graduation project: an AI-based diabetes prediction and clinical decision-support system.</li>
+                <li>Received the <strong>DEPI Certificate of Recognition</strong> for top performance in the cohort.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-when">
+              <time datetime="2022-08">2022</time> – <time datetime="2023-08">2023</time>
+              <span class="tl-where">Internships</span>
+            </div>
+            <article class="tl-card">
+              <header>
+                <h3>Back-End Developer Intern <span class="at">@ Pinatro &amp; CCIC</span></h3>
+              </header>
+              <ul>
+                <li><strong>Pinatro</strong> (Jun–Aug 2023, remote): built backend features and REST APIs as part of an Agile team working in Git.</li>
+                <li><strong>CCIC</strong> (Aug–Oct 2022, Mansoura): built a full-stack Django e-commerce app with products, accounts, cart and orders, plus REST APIs in Django REST Framework.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>Django</li><li>DRF</li><li>REST</li><li>Git</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <p class="section-kicker">03 · Projects</p>
+        <h2 id="projects-title">Selected projects</h2>
+        <p class="section-sub">Hackathon work and personal projects in backend design, performance and applied AI.</p>
+      </div>
+
+      <article class="project-featured reveal">
+        <div class="pf-body">
+          <p class="pf-label">
+            <svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg>
+            Winner · Cairo AI Hackathon 2025
+          </p>
+          <h3>Lotus Platform</h3>
+          <p>
+            An AI-powered data-analysis product I created with my team. It won the <strong>Cairo AI Hackathon 2025</strong>
+            (EGP 100,000 prize) and placed <strong>6th nationwide at DIGITOPIA 2025</strong>
+            in the AI &amp; Software Solutions track.
+          </p>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li><li>AI</li><li>Data analysis</li>
+          </ul>
+        </div>
+        <div class="pf-stats" aria-label="Lotus results">
+          <div><span>1st</span>Cairo AI Hackathon</div>
+          <div><span>6th</span>DIGITOPIA, nationwide</div>
+          <div><span>EGP 100k</span>Prize</div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <p class="pc-kicker">Backend · Forecasting</p>
+          <h3>Inventory &amp; Demand Forecasting System</h3>
+          <p>Inventory service covering suppliers, purchase orders, warehouse operations and reporting. It forecasts demand from past sales to flag likely stock shortages and suggest restocking.</p>
+          <ul class="pc-points">
+            <li>Redis caching and async processing for higher throughput</li>
+            <li>Containerised, with a tuned PostgreSQL schema</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <p class="pc-kicker">Backend · AI matching</p>
+          <h3>Job Portal &amp; Recruitment System</h3>
+          <p>Recruitment platform for job posts, applications, résumé uploads, interview scheduling and application tracking. Candidates are matched to jobs automatically using semantic analysis.</p>
+          <ul class="pc-points">
+            <li>Role-based access, advanced search and filtering</li>
+            <li>Indexing, query tuning and background workers</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>NLP</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <p class="pc-kicker">Full-stack · E-commerce</p>
+          <h3>Greeny: Grocery E-Commerce</h3>
+          <p>Grocery store with a product catalogue, cart, checkout, secure payments and order tracking. It also offers AI product recommendations based on each customer's preferences and shopping history.</p>
+          <ul class="pc-points">
+            <li>Product comparison, order history and blog</li>
+            <li>REST APIs for the full shopping flow</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>Django</li><li>PostgreSQL</li><li>REST</li><li>Recommendations</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="projects-more">
+        <a class="link-arrow" href="https://github.com/adhamhe6" target="_blank" rel="noopener">
+          More on GitHub
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </p>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">04 · Skills</p>
+          <h2 id="skills-title">Technical skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3>Languages</h3>
+            <ul class="chips"><li>Python</li><li>SQL</li><li>JavaScript</li><li>HTML / CSS</li></ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Backend &amp; APIs</h3>
+            <ul class="chips"><li>FastAPI</li><li>Django</li><li>Django REST Framework</li><li>REST API design</li><li>Microservices</li><li>Async &amp; background jobs</li></ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Data</h3>
+            <ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>Redis</li><li>Query optimisation</li><li>Indexing</li><li>Data migration</li></ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>AI &amp; Machine Learning</h3>
+            <ul class="chips"><li>LLM integration</li><li>RAG</li><li>Vector databases</li><li>Prompt engineering</li><li>scikit-learn</li><li>Pandas / NumPy</li><li>Forecasting</li><li>Reinforcement learning</li></ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Cloud &amp; DevOps</h3>
+            <ul class="chips"><li>AWS</li><li>Docker</li><li>Linux</li><li>CI/CD</li><li>Git / GitHub</li><li>Postman</li></ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Domains &amp; Practices</h3>
+            <ul class="chips"><li>System design</li><li>Testing &amp; code review</li><li>Agile</li><li>ERP systems</li><li>RFID &amp; inventory</li><li>POS &amp; e-invoicing</li><li>AI-assisted development</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECOGNITION ============ -->
+    <section class="section container" id="recognition" aria-labelledby="recognition-title">
+      <div class="section-head">
+        <p class="section-kicker">05 · Recognition</p>
+        <h2 id="recognition-title">Awards, certifications &amp; education</h2>
+      </div>
+
+      <div class="recog-grid">
+        <div class="recog-col reveal">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg> Awards</h3>
+          <ul class="recog-list">
+            <li><strong>Winner, Cairo AI Hackathon 2025</strong><span>Lotus Platform · EGP 100,000 prize</span></li>
+            <li><strong>6th nationwide, DIGITOPIA 2025</strong><span>AI &amp; Software Solutions track, final stage</span></li>
+            <li><strong>Bronze Medal, Huawei ICT Competition</strong><span>2025/26 · Cloud track, national phase</span></li>
+            <li><strong>Finalist, AWS DeepRacer Egypt</strong><span>1.138s behind first place, using reinforcement learning</span></li>
+          </ul>
+        </div>
+
+        <div class="recog-col reveal">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-badge"/></svg> Certifications</h3>
+          <ul class="recog-list">
+            <li><strong>AWS Certified Cloud Practitioner</strong><span>Amazon Web Services</span></li>
+            <li><strong>AWS Certified AI Practitioner</strong><span>Amazon Web Services</span></li>
+            <li><strong>HCIA: Cloud Service / AI</strong><span>Huawei</span></li>
+            <li><strong>AWS AI &amp; ML Program</strong><span>Udacity</span></li>
+            <li><strong>Supervised ML &amp; Advanced Learning Algorithms</strong><span>DeepLearning.AI · Coursera</span></li>
+          </ul>
+        </div>
+
+        <div class="recog-col reveal">
+          <h3><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg> Education</h3>
+          <ul class="recog-list">
+            <li><strong>B.Sc. Computer Science</strong><span>Mansoura University, Faculty of Computers &amp; Information Sciences · 2019–2023</span></li>
+          </ul>
+          <h3 class="mt"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg> Languages</h3>
+          <ul class="lang-list">
+            <li><span>Arabic</span><span class="lang-level">Native</span></li>
+            <li><span>English</span><span class="lang-level">C1 · Professional</span></li>
+            <li><span>German</span><span class="lang-level">B1 · Intermediate</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner reveal">
+        <p class="section-kicker">06 · Contact</p>
+        <h2 id="contact-title">Let's build something reliable</h2>
+        <p class="contact-lede">
+          I'm open to backend and AI engineering roles, remote or in the GCC.
+          If you're hiring or have a project in mind, send me a message.
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" href="mailto:adhamdev9@gmail.com">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+            adhamdev9@gmail.com
+          </a>
+          <button class="btn btn-ghost btn-lg copy-email" type="button" data-email="adhamdev9@gmail.com">
+            Copy email
+          </button>
+        </div>
+        <ul class="contact-links">
+          <li><a href="https://www.linkedin.com/in/adhamhe6/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+          <li><a href="https://github.com/adhamhe6" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+          <li><a href="assets/docs/Adham_Hewala_CV.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>CV (PDF)</a></li>
+        </ul>
+        <p class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Adham Hewala</p>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
     </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

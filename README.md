@@ -1,29 +1,56 @@
-# Portfolio Website
+# Adham Hewala: Portfolio
 
-This is my portfolio website, showcasing my skills, experience, and projects.
+Personal website for **Adham Hewala, Backend & AI Engineer**.
+Live at **https://adhamhe6.github.io/portfolio/**
 
-## Description
+It's a static site written in plain HTML, CSS and JavaScript. There's no build step and no dependencies to install.
 
-This static website is built using HTML, CSS, and Bootstrap. It includes sections for an introduction, experience, skills, and goals. The website is responsive and optimized for desktop and mobile devices.
+## Features
 
-## Demo
+- Sections: hero, key numbers, about, experience timeline, projects, skills, awards, certifications, education and contact
+- Light and dark themes. It follows the system setting by default, and your choice is remembered
+- Works on phones and desktops, with an accessible mobile menu
+- Accessibility: semantic landmarks, a skip link, visible focus styles, support for reduced motion, and good colour contrast
+- SEO: meta description, Open Graph tags, JSON-LD `Person` data, canonical URL and a sitemap
+- Downloadable CV, a copy-email button, a custom 404 page and print styles
 
-You can access the live demo of the website [here](https://adhamhe6.github.io/portfolio-website/).
+## Structure
 
-## Screenshots
+```
+index.html              # the whole page
+404.html                # GitHub Pages "not found" page
+sitemap.xml
+.nojekyll               # serve files as-is (skip Jekyll)
+assets/
+  css/styles.css        # design tokens, layout, themes
+  js/main.js            # theme toggle, mobile nav, scroll spy, reveal, copy email
+  img/adham.jpg         # portrait / social preview
+  img/favicon.svg
+  docs/Adham_Hewala_CV.pdf
+```
 
-Here are some screenshots of the website:
+## Run locally
 
-![Screenshot 1](https://github.com/adhamhe6/portfolio-website/assets/108878575/ecf2570c-0d5d-4c98-ab51-e9d349624044)
-![Screenshot 2](https://github.com/adhamhe6/portfolio-website/assets/108878575/840b24ec-92e9-4749-bf63-a2194ec95142)
+```bash
+git clone https://github.com/adhamhe6/portfolio.git
+cd portfolio
+python3 -m http.server 8000   # then open http://localhost:8000
+```
 
-## Installation
+## Deploy to GitHub Pages
 
-To run the website locally, follow these steps:
+1. Merge this branch into `main`.
+2. On GitHub, go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source: Deploy from a branch**, **Branch: `main`**, folder **`/ (root)`**, then click **Save**.
+4. After a minute or two the site is live at `https://adhamhe6.github.io/portfolio/`.
+5. Optional: in the repo's **About** panel, set the website to that URL.
 
-1. Clone the repository:
+Every push to `main` redeploys the site automatically.
 
-   ```bash
-   git clone https://github.com/adhamhe6/portfolio-website.git
+## Updating content
 
-2. Open the index.html file in your web browser.
+- **Text:** edit `index.html`. Each section is marked with an `<!-- ===== NAME ===== -->` comment.
+- **CV:** replace `assets/docs/Adham_Hewala_CV.pdf`, keeping the same file name.
+- **Photo:** replace `assets/img/adham.jpg`. A square image of about 500×500 works best.
+- **Colours:** change the `--accent` tokens at the top of `assets/css/styles.css`.
+- **Project links:** when a project repo is public, add a link to it inside that project's card.
