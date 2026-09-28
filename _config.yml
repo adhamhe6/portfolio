@@ -1,0 +1,22 @@
+# Site settings — GitHub Pages builds this automatically with Jekyll.
+title: Adham Hewala
+role: Backend & AI Engineer
+description: >-
+  Backend engineer in Cairo building Python/FastAPI services, REST APIs,
+  data pipelines and AI features for manufacturing and retail platforms.
+author: Adham Hewala
+email: adhamdev9@gmail.com
+location: Cairo, Egypt
+cv: /assets/docs/Adham_Hewala_CV.pdf
+
+url: "https://adhamhe6.github.io"
+baseurl: "/portfolio"
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

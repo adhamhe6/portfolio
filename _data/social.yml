@@ -1,0 +1,12 @@
+- name: GitHub
+  handle: adhamhe6
+  url: https://github.com/adhamhe6
+  icon: github
+- name: LinkedIn
+  handle: in/adhamhe6
+  url: https://www.linkedin.com/in/adhamhe6/
+  icon: linkedin
+- name: X
+  handle: "@adhamhe6"
+  url: https://x.com/adhamhe6
+  icon: x
