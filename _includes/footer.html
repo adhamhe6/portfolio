@@ -1,0 +1,39 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-mark" aria-hidden="true">AH</span>
+          <span class="brand-name">{{ site.author }}</span>
+        </a>
+        <p>Backend &amp; AI engineer in Cairo. Open to remote roles and relocation to the GCC.</p>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">Pages</h2>
+        <ul>
+          {% for item in site.data.nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">Elsewhere</h2>
+        <ul>
+          {% for s in site.data.social %}
+          <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a></li>
+          {% endfor %}
+          <li><a href="mailto:{{ site.email }}">Email</a></li>
+          <li><a href="{{ site.cv | relative_url }}" download>CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year>2026</span> {{ site.author }} · Hand-built with HTML, CSS &amp; Jekyll</p>
+      <p class="footer-hint">Press <kbd class="kbd" data-mod-key>Ctrl K</kbd> to jump anywhere</p>
+      <a href="#top" class="back-to-top" data-back-to-top>
+        Back to top
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>

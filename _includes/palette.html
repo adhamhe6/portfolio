@@ -1,0 +1,42 @@
+<dialog class="palette" aria-label="Quick navigation">
+  <div class="palette-box">
+    <div class="palette-search">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+      <input type="text" class="palette-input" placeholder="Search pages and actions…" aria-label="Search pages and actions" aria-controls="palette-list" aria-autocomplete="list" autocomplete="off" spellcheck="false">
+      <kbd class="kbd">Esc</kbd>
+    </div>
+    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Results">
+      <li class="palette-group" role="presentation">Pages</li>
+      {% for item in site.data.nav %}
+      <li role="option" class="palette-item" data-href="{{ item.url | relative_url }}" data-keywords="{{ item.title | downcase }} page">
+        <svg class="icon" aria-hidden="true"><use href="#i-page"/></svg>{{ item.title }}
+      </li>
+      {% endfor %}
+      <li class="palette-group" role="presentation">Actions</li>
+      <li role="option" class="palette-item" data-action="copy-email" data-keywords="copy email mail contact">
+        <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copy email address
+      </li>
+      <li role="option" class="palette-item" data-href="{{ site.cv | relative_url }}" data-download data-keywords="cv resume download pdf">
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download CV
+      </li>
+      <li role="option" class="palette-item" data-action="theme" data-keywords="theme dark light mode">
+        <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>Toggle dark / light theme
+      </li>
+      <li class="palette-group" role="presentation">Elsewhere</li>
+      <li role="option" class="palette-item" data-href="mailto:{{ site.email }}" data-keywords="email send mail">
+        <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Send an email
+      </li>
+      {% for s in site.data.social %}
+      <li role="option" class="palette-item" data-href="{{ s.url }}" data-external data-keywords="{{ s.name | downcase }} social profile">
+        <svg class="icon" aria-hidden="true"><use href="#i-{{ s.icon }}"/></svg>{{ s.name }}<span class="palette-meta">{{ s.handle }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="palette-empty" hidden>No matches.</p>
+    <div class="palette-foot">
+      <span><kbd class="kbd">↑</kbd><kbd class="kbd">↓</kbd> navigate</span>
+      <span><kbd class="kbd">Enter</kbd> open</span>
+    </div>
+  </div>
+</dialog>
+<div class="toast" role="status" aria-live="polite"></div>

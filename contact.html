@@ -1,0 +1,74 @@
+---
+layout: default
+title: Contact
+nav: contact
+permalink: /contact/
+hide_cta: true
+description: Contact Adham Hewala about backend and AI engineering roles, remote or in the GCC.
+---
+<header class="page-head">
+  <div class="container">
+    <p class="kicker">§ Contact</p>
+    <h1 class="display page-title">Let's build something <em>reliable</em>.</h1>
+    <p class="page-lede">I'm open to backend and AI engineering roles, remote or with relocation to the GCC. Email is the best way to reach me.</p>
+  </div>
+</header>
+
+<section class="section section-tight">
+  <div class="container contact-grid">
+    <div class="contact-main reveal">
+      <p class="contact-label">Email</p>
+      <a class="contact-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:{{ site.email }}">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+          Send an email
+        </a>
+        <button class="btn btn-ghost" type="button" data-copy-email="{{ site.email }}">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+          Copy address
+        </button>
+      </div>
+
+      <ul class="contact-cards">
+        {% for s in site.data.social %}
+        <li>
+          <a href="{{ s.url }}" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-{{ s.icon }}"/></svg>
+            <span><strong>{{ s.name }}</strong>{{ s.handle }}</span>
+            <svg class="icon go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        {% endfor %}
+        <li>
+          <a href="{{ site.cv | relative_url }}" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            <span><strong>CV</strong>PDF, 2 pages</span>
+            <svg class="icon go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <aside class="contact-side reveal" aria-label="Details">
+      <dl>
+        <div>
+          <dt><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg> Looking for</dt>
+          <dd>Backend engineer, AI engineer and platform roles</dd>
+        </div>
+        <div>
+          <dt><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg> Work setup</dt>
+          <dd>Remote, or relocation to the GCC</dd>
+        </div>
+        <div>
+          <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Based in</dt>
+          <dd>{{ site.location }}</dd>
+        </div>
+        <div>
+          <dt><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Local time</dt>
+          <dd><span data-local-time>Cairo time</span></dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>

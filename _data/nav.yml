@@ -1,0 +1,15 @@
+- title: Home
+  url: /
+  key: home
+- title: About
+  url: /about/
+  key: about
+- title: Experience
+  url: /experience/
+  key: experience
+- title: Projects
+  url: /projects/
+  key: projects
+- title: Contact
+  url: /contact/
+  key: contact
