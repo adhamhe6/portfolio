@@ -24,8 +24,7 @@ sitemap.xml
 assets/
   css/styles.css        # design tokens, layout, themes
   js/main.js            # theme toggle, mobile nav, scroll spy, reveal, copy email
-  img/adham.jpg         # portrait / social preview
-  img/favicon.svg
+  img/404.png           # hero artwork, logo, favicon, social preview
   docs/Adham_Hewala_CV.pdf
 ```
 
@@ -51,6 +50,6 @@ Every push to `main` redeploys the site automatically.
 
 - **Text:** edit `index.html`. Each section is marked with an `<!-- ===== NAME ===== -->` comment.
 - **CV:** replace `assets/docs/Adham_Hewala_CV.pdf`, keeping the same file name.
-- **Photo:** replace `assets/img/adham.jpg`. A square image of about 500×500 works best.
+- **Hero image / logo:** replace `assets/img/404.png` (used for the hero artwork, header logo, favicon and social preview). Use a square image.
 - **Colours:** change the `--accent` tokens at the top of `assets/css/styles.css`.
 - **Project links:** when a project repo is public, add a link to it inside that project's card.
