@@ -585,7 +585,7 @@ strong { font-weight: 600; color: var(--text); }
   border-block: 1px solid var(--border);
 }
 
-.section-head { margin-bottom: 48px; max-width: 680px; }
+.section-head { margin-bottom: 48px; max-width: 820px; }
 .section-kicker {
   margin-bottom: 10px;
   font-family: var(--font-mono);
