@@ -469,6 +469,45 @@ strong { font-weight: 600; color: var(--text); }
   50% { transform: translateY(-6px); }
 }
 
+/* Mini "200" badge — the small-screen stand-in for the chip */
+.status-mini {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px 4px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text);
+}
+.status-mini-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.status-mini-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: mini-pulse 2s ease-out infinite;
+}
+@keyframes mini-pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(2.6); opacity: 0; }
+}
+
 /* ---------- Impact strip ---------- */
 .impact {
   border-block: 1px solid var(--border);
@@ -926,6 +965,7 @@ strong { font-weight: 600; color: var(--text); }
   .hero-visual { order: -1; justify-self: start; width: 160px; }
   .portrait { border-radius: 20px; }
   .status-chip { display: none; }
+  .status-mini { display: inline-flex; }
 
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
   .impact-item { padding: 22px 20px; }
@@ -970,10 +1010,11 @@ strong { font-weight: 600; color: var(--text); }
   }
   .js .reveal { opacity: 1; transform: none; }
   .status-chip { animation: none; }
+  .status-mini-dot::after { animation: none; }
 }
 
 @media print {
-  .site-header, .hero-actions, .theme-toggle, .status-chip, .contact-actions, .back-to-top { display: none !important; }
+  .site-header, .hero-actions, .theme-toggle, .status-chip, .status-mini, .contact-actions, .back-to-top { display: none !important; }
   .js .reveal { opacity: 1; transform: none; }
   .section, .hero { padding-block: 24px; }
   body { background: #fff; color: #000; }
