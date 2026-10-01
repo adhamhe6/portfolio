@@ -133,6 +133,16 @@
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---------- Scrollable Recognition cards: fade hint ---------- */
+  document.querySelectorAll('.recog-scroll').forEach(function (box) {
+    var update = function () {
+      box.classList.toggle('has-more', box.scrollTop + box.clientHeight < box.scrollHeight - 2);
+    };
+    box.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+
   /* ---------- Copy email ---------- */
   var copyBtn = document.querySelector('.copy-email');
   var copyStatus = document.querySelector('.copy-status');
