@@ -141,6 +141,19 @@
     box.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
+
+    // Never trap the page: once the card can't scroll further in the wheel's
+    // direction (or has no overflow), pass the scroll straight to the page.
+    box.addEventListener('wheel', function (e) {
+      if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return; // pinch-zoom / sideways
+      var dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1);
+      var atTop = box.scrollTop <= 0;
+      var atBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 1;
+      if ((dy < 0 && atTop) || (dy > 0 && atBottom)) {
+        e.preventDefault();
+        window.scrollBy({ top: dy, behavior: 'instant' });
+      }
+    }, { passive: false });
   });
 
   /* ---------- Copy email ---------- */
