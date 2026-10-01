@@ -219,6 +219,27 @@ strong { font-weight: 600; color: var(--text); }
 }
 .site-header.is-scrolled { border-bottom-color: var(--border); }
 
+/* Reading progress: thin accent line on the navbar's bottom edge */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.scroll-progress-bar {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 55%, transparent), var(--accent));
+  border-radius: 0 2px 2px 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.12s linear;
+  will-change: transform;
+}
+
 .nav {
   height: 100%;
   display: flex;

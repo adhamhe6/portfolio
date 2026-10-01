@@ -58,11 +58,29 @@
 
   /* ---------- Header border on scroll ---------- */
   var header = document.querySelector('.site-header');
+  var progressBar = document.querySelector('.scroll-progress-bar');
+  var progressQueued = false;
+
+  // 0 at the top of the page, 1 at the bottom
+  function updateProgress() {
+    progressQueued = false;
+    if (!progressBar) return;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var ratio = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+    progressBar.style.transform = 'scaleX(' + ratio + ')';
+  }
+
   function onScroll() {
     header.classList.toggle('is-scrolled', window.scrollY > 8);
+    if (!progressQueued) {
+      progressQueued = true;
+      requestAnimationFrame(updateProgress);
+    }
   }
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', onScroll);
 
   /* ---------- Back to top ---------- */
   document.querySelectorAll('[data-scroll-top]').forEach(function (link) {
