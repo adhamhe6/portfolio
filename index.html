@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261001b">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261001c">
 
   <!-- Apply saved theme before paint to avoid a flash -->
   <script>
@@ -476,17 +476,21 @@
           </ul>
         </div>
 
-        <div class="recog-col reveal">
-          <h3><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg> Education</h3>
-          <ul class="recog-list">
-            <li><strong>B.Sc. Computer Science</strong><span>Mansoura University, Faculty of Computers &amp; Information Sciences · 2019–2023</span></li>
-          </ul>
-          <h3 class="mt"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg> Languages</h3>
-          <ul class="lang-list">
-            <li><span>Arabic</span><span class="lang-level">Native</span></li>
-            <li><span>English</span><span class="lang-level">C1 · Professional</span></li>
-            <li><span>German</span><span class="lang-level">B1 · Intermediate</span></li>
-          </ul>
+        <div class="recog-stack reveal">
+          <div class="recog-col recog-card">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg> Education</h3>
+            <ul class="recog-list recog-scroll" tabindex="0" aria-label="Education">
+              <li><strong>B.Sc. Computer Science</strong><span>Mansoura University, Faculty of Computers &amp; Information Sciences · 2019–2023</span></li>
+            </ul>
+          </div>
+          <div class="recog-col recog-card">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg> Languages</h3>
+            <ul class="lang-list recog-scroll" tabindex="0" aria-label="Languages">
+              <li><span>Arabic</span><span class="lang-level">Native</span></li>
+              <li><span>English</span><span class="lang-level">C1 · Professional</span></li>
+              <li><span>German</span><span class="lang-level">B1 · Intermediate</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

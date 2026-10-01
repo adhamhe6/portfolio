@@ -838,7 +838,7 @@ strong { font-weight: 600; color: var(--text); }
 .recog-card {
   display: flex;
   flex-direction: column;
-  height: 380px;
+  height: 400px;
   padding: 22px 8px 8px 22px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -847,6 +847,16 @@ strong { font-weight: 600; color: var(--text); }
   transition: border-color 0.2s var(--ease);
 }
 .recog-card:hover { border-color: var(--border-strong); }
+/* Education + Languages: two stacked cards sharing one column's height */
+.recog-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 400px;
+}
+.recog-stack .recog-card { flex: 1 1 0; height: auto; min-height: 0; }
+.recog-stack .recog-list li { padding: 8px 0; }
+.recog-card .lang-list { padding-top: 8px; padding-bottom: 6px; }
 .recog-card h3 { margin-bottom: 8px; padding-right: 14px; }
 .recog-scroll {
   flex: 1;
@@ -879,7 +889,6 @@ strong { font-weight: 600; color: var(--text); }
   font-size: 1.05rem;
 }
 .recog-col h3 .icon { color: var(--accent); width: 20px; height: 20px; }
-.recog-col h3.mt { margin-top: 32px; }
 
 .recog-list { display: grid; gap: 4px; }
 .recog-list li {
@@ -968,8 +977,12 @@ strong { font-weight: 600; color: var(--text); }
   .project-grid,
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .recog-grid { grid-template-columns: 1fr 1fr; }
-  .recog-col:last-child { grid-column: 1 / -1; }
-  .recog-col:last-child { margin-top: 8px; }
+  .recog-stack {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 32px;
+    height: 200px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1034,8 +1047,9 @@ strong { font-weight: 600; color: var(--text); }
   .project-grid,
   .skills-grid,
   .recog-grid { grid-template-columns: 1fr; }
-  .recog-col:last-child { grid-column: auto; }
+  .recog-stack { grid-column: auto; flex-direction: column; height: auto; }
   .recog-card { height: auto; max-height: 360px; }
+  .recog-stack .recog-card { flex: none; max-height: 260px; }
   .tl-card { padding: 20px; }
   .tl-where { display: block; margin: 2px 0 0; }
   .tl-where::before { content: none; }
