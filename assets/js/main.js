@@ -80,20 +80,41 @@
     .map(function (a) { return document.querySelector(a.getAttribute('href')); })
     .filter(Boolean);
 
-  if ('IntersectionObserver' in window && sections.length) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = '#' + entry.target.id;
-        links.forEach(function (a) {
-          var active = a.getAttribute('href') === id;
-          a.classList.toggle('is-active', active);
-          if (active) a.setAttribute('aria-current', 'true');
-          else a.removeAttribute('aria-current');
-        });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach(function (s) { spy.observe(s); });
+  // Highlight the section crossing the middle of the viewport; none while
+  // the hero (or any gap between sections) is there instead.
+  function setActive(section) {
+    var id = section ? '#' + section.id : null;
+    links.forEach(function (a) {
+      var active = a.getAttribute('href') === id;
+      a.classList.toggle('is-active', active);
+      if (active) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
+  function updateActive() {
+    var line = window.innerHeight * 0.45;
+    var current = null;
+    sections.forEach(function (s) {
+      var r = s.getBoundingClientRect();
+      if (r.top <= line && r.bottom > line) current = s;
+    });
+    // At the very bottom the last (short) section may never reach the line
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (atBottom && window.scrollY > 0) current = sections[sections.length - 1];
+    setActive(current);
+  }
+
+  if (sections.length) {
+    var ticking = false;
+    var onSpyScroll = function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; updateActive(); });
+    };
+    window.addEventListener('scroll', onSpyScroll, { passive: true });
+    window.addEventListener('resize', onSpyScroll);
+    updateActive();
   }
 
   /* ---------- Reveal on scroll ---------- */
